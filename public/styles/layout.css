@@ -48,12 +48,14 @@ nav .nav-right {
   float: right;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 20px;
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
-nav .nav-right-icon {
+.nav-right-icon {
   color: red;
-  padding-top: 55px;
-  padding-left: 490px;
-  display: initial;
+  padding-top: 40px;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: 90%;
+  float: right;
 }
