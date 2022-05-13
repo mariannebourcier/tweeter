@@ -1,0 +1,20 @@
+header {
+  height: 400px;
+  width: 100%;
+  background-color: #fe7e6d;
+  background-image: url("https://www.transparenttextures.com/patterns/satin-weave.png");
+}
+
+header .header-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
