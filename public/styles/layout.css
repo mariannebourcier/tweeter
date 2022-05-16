@@ -21,23 +21,23 @@ body {
   color: #545149;
   background-color: #ded8cd;
   font-size: 24px;
+  padding-top: 90px;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- body {
-   font-family: 'Source Sans Pro', sans-serif;
- }
+
 
  nav {
    height: 120px;
    background-color: #4056A1;
    width: 100%;
    padding: 1.5em;
-   position: relative;
-   z-index: -1;
+   position: fixed;
+   top: 0;
  }
 
 
