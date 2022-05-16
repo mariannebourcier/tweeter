@@ -46,20 +46,18 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1 class="main-h1">What are you humming about?</h1>
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
+          <label for="tweet-text"><b>What are you humming about?</b></label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
+            <hr>
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
-      <hr>
-      <p class="text-example">Your tweets will go here!</p>
+
     </main>
   </body>
 </html>
