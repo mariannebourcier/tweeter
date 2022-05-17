@@ -3,7 +3,17 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+//connect to document
 $(document).ready(() => {
+  //render tweets in string
+  const renderTweets = (tweets) => {
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $("#tweets-container").prepend($tweet);
+    }
+  };
+  //fetch tweets data
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = tweetData.content;
@@ -13,13 +23,14 @@ $(document).ready(() => {
     <article class='tweet-container'>
     <header>
     <div>
-      <i class="fa-solid fa-kiwi-bird"></i>            <span>Marianne</span>
+      <i class="fa-solid fa-kiwi-bird"></i> 
+      <span>${user.name}</span>
     </div>
-    <p class="user-id">@BrainFrog</p>
+    <p class="user-id">${user.handle}</p>
   </header>
-  <p class="tweet-text-log">I need coffee.</p>
+  <p class="tweet-text-log">${content.text}</p>
   <footer>
-    <time>6 days ago</time>
+    <time>${tweetTime.format(time)}</time>
     <div class="interaction-icons-container">
       <a href="#"><i class="flag-icon fa-solid fa-flag"></i></a>
       <a href="#"><i class="retweet-icon fa-solid fa-retweet"></i></i></a>
@@ -27,10 +38,11 @@ $(document).ready(() => {
     </div>
   </footer>
 </article>`;
-  
-  
+    return $tweetElement;
+
   };
-})
+
+});
 
 
 
