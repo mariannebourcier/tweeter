@@ -1,8 +1,8 @@
 //document ready
 $(document).ready(() => {
   //create tweet
-   //fetch tweets data
-   const createTweetElement = (tweetData) => {
+  //fetch tweets data
+  const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = tweetData.content;
     const time = tweetData.created_at;
@@ -29,17 +29,17 @@ $(document).ready(() => {
     return $tweetElement;
   };
   
-   //render tweets in string
-   const renderTweets = (tweets) => {
+  //render tweets in string
+  const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $("#tweet-container").prepend($tweet);
     }
   };
 
-   //get tweets
-   const loadTweets = () => {
-    $.getJSON("/tweets").done(function (tweets) {
+  //get tweets
+  const loadTweets = () => {
+    $.getJSON("/tweets/").done((tweets) => {
       $("#tweet-container").empty();
       renderTweets(tweets);
     });
@@ -49,36 +49,51 @@ $(document).ready(() => {
   //event listener
   $( "form" ).submit('click', ( event ) => {
     //prevent default
-    event.preventDefault();
+    //event.preventDefault();
     //serialize
     const tweet = $(this).serialize();
 
-    if (tweet.length > 141) return alert("Too many characters. Keep it at 140.");
-    if (tweet.length < 2) return alert("Tell us what's on your mind. Nobody's judging.");
+    //form validation
+    
+    //"" or empty
+    //too long
 
-    $.post("/tweets", tweet).success(() => {
-      loadTweets();
+    //ajax post request
+    $.ajax({
+      type: "POST",
+      url: "/tweets",
+      data: loadTweets(),
+      dataType: "json"
+    }).done((tweet) => {
+      console.log(tweet);
     });
+    if (tweet.length > 141) return alert('Too many characters...');
+    if (tweet.length < 2) return alert("Don't be shy, tell us more!");
+
+    event.preventDefault();
+    // $.post("/tweets", tweet).success(() => {
+    //   loadTweets();
+    // });
   });
  
 });
 
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+// // Test / driver code (temporary). Eventually will get this from the server.
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//     "handle": "@SirIsaac"
+//   },
+//   "content": {
+//     "text": "If I have seen further it is by standing on the shoulders of giants"
+//   },
+//   "created_at": 1461116232227
+// }
 
-const $tweet = createTweetElement(tweetData);
+// const $tweet = createTweetElement(tweetData);
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+// // Test / driver code (temporary)
+// console.log($tweet); // to see what it looks like
+// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
