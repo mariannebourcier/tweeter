@@ -1,5 +1,12 @@
+/* eslint-disable no-undef */
 //document ready
 $(document).ready(() => {
+  //escape function to make tweet input safe
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
   //create tweet
   //fetch tweets data
   const createTweetElement = (tweetData) => {
@@ -16,7 +23,7 @@ $(document).ready(() => {
     </div>
     <p class="user-id">${user.handle}</p>
   </header>
-  <p class="tweet-text-log">${content.text}</p>
+  <p class="tweet-text-log">${escape(content)}</p>
   <footer>
     <span>${timeago.format(time)}</span>
     <div class="interaction-icons-container">
@@ -43,11 +50,12 @@ $(document).ready(() => {
       $("#tweet-container").empty();
       renderTweets(tweets);
     });
+    console.log(loadTweets());
   };
 
   //new tweet
   //event listener
-  $( "form" ).submit('click', ( event ) => {
+  $( "form" ).on('submit', ( event ) => {
     //prevent default
     //event.preventDefault();
     //serialize
@@ -63,12 +71,13 @@ $(document).ready(() => {
       type: "POST",
       url: "/tweets",
       data: loadTweets(),
-      dataType: "json"
+      dataType: "json",
+      encode: true
     }).done((tweet) => {
       console.log(tweet);
     });
     if (tweet.length > 141) return alert('Too many characters...');
-    if (tweet.length < 2) return alert("Don't be shy, tell us more!");
+    if (tweet === "") return alert("Don't be shy, tell us more!");
 
     event.preventDefault();
     // $.post("/tweets", tweet).success(() => {
