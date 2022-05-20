@@ -2,7 +2,7 @@
 //document ready
 $(document).ready(() => {
   //escape function to make tweet input safe
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -25,7 +25,7 @@ $(document).ready(() => {
   </header>
   <p class="tweet-text-log">${escape(content)}</p>
   <footer>
-    <span>${timeago.format(time)}</span>
+    <span class="time">${timeago.format(time)}</span>
     <div class="interaction-icons-container">
       <a href="#"><i class="flag-icon fa-solid fa-flag"></i></a>
       <a href="#"><i class="retweet-icon fa-solid fa-retweet"></i></i></a>
@@ -55,16 +55,31 @@ $(document).ready(() => {
 
   //new tweet
   //event listener
-  $( "form" ).on('submit', ( event ) => {
+  $("form").on('submit', (event) => {
     //prevent default
     //event.preventDefault();
     //serialize
     const tweet = $(this).serialize();
 
     //form validation
-    
+    $("#tweet-text").validate({
+      rules: {
+        tweet: {
+          required: true,
+          minlength: 1,
+          maxlength: 240
+        },
+        messages: {
+          required: "Let us know what's on your mind. Don't be shy!",
+          minlength: "Your tweet needs to be more than 1 character.",
+          maxlength: "Your tweet is too long!"
+        }
+      }
+      //submit
+    });
     //"" or empty
     //too long
+    //toggle & slide down
 
     //ajax post request
     $.ajax({
@@ -76,8 +91,6 @@ $(document).ready(() => {
     }).done((tweet) => {
       console.log(tweet);
     });
-    if (tweet.length > 141) return alert('Too many characters...');
-    if (tweet === "") return alert("Don't be shy, tell us more!");
 
     event.preventDefault();
     // $.post("/tweets", tweet).success(() => {
