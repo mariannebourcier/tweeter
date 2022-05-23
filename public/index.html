@@ -49,9 +49,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <form action="/tweets/" method="POST">
+        <form id="form" class="form">
           <label for="tweet-text"><b>What are you humming about?</b></label>
-          <input type="text" name="tweet" id="tweet-text"></input>
+          <input type="text" name="text" id="tweet-text"></input>
           <div>
             <hr>
             <button type="submit" class="tweet-send">Tweet</button>
@@ -59,6 +59,8 @@
           </div>
         </form>
       </section>
+      <section id="tweets-container"></section>
+    
       <!-- <article class="tweet-container"> -->
         <!-- <header>
           <div>

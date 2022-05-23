@@ -2,7 +2,7 @@
 //document ready
 $(document).ready(() => {
   //escape function to make tweet input safe
-  const escape = function(str) {
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -16,89 +16,93 @@ $(document).ready(() => {
 
     const $tweetElement = `
     <article id='tweet-container'>
-    <header>
-    <div>
-      <img src="${user.avatars}"> 
-      <span>${user.name}</span>
-    </div>
-    <p class="user-id">${user.handle}</p>
-  </header>
-  <p class="tweet-text-log">${escape(content)}</p>
-  <footer>
-    <span class="time">${timeago.format(time)}</span>
-    <div class="interaction-icons-container">
-      <a href="#"><i class="flag-icon fa-solid fa-flag"></i></a>
-      <a href="#"><i class="retweet-icon fa-solid fa-retweet"></i></i></a>
-      <a href="#"><i class="heart-icon fa-solid fa-heart"></i></i></a>
-    </div>
-  </footer>
-</article>`;
+      <header>
+        <div>
+          <img src="${user.avatars}"> 
+          <span>${user.name}</span>
+        </div>
+        <p class="user-id">${user.handle}</p>
+      </header>
+      <p class="tweet-text-log">${escape(content)}</p>
+      <footer>
+        <span class="time">${timeago.format(time)}</span>
+        <div class="interaction-icons-container">
+          <a href="#"><i class="flag-icon fa-solid fa-flag"></i></a>
+          <a href="#"><i class="retweet-icon fa-solid fa-retweet"></i></i></a>
+          <a href="#"><i class="heart-icon fa-solid fa-heart"></i></i></a>
+        </div>
+      </footer>
+    </article>`;
     return $tweetElement;
   };
-  
+
   //render tweets in string
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $("#tweet-container").prepend($tweet);
+      $("#tweets-container").prepend($tweet);
     }
   };
 
   //get tweets
   const loadTweets = () => {
     $.getJSON("/tweets/").done((tweets) => {
-      $("#tweet-container").empty();
+      $("#tweets-container").empty();
       renderTweets(tweets);
     });
-    console.log(loadTweets());
   };
 
   //new tweet
   //event listener
-  $("form").on('submit', (event) => {
+
+  $("#form").submit(function(event) {
     //prevent default
     //event.preventDefault();
     //serialize
-    const tweet = $(this).serialize();
-
+    event.preventDefault();
+    // const text = $("#tweet-text").val();
+    // const body = {text};
     //form validation
-    $("#tweet-text").validate({
-      rules: {
-        tweet: {
-          required: true,
-          minlength: 1,
-          maxlength: 240
-        },
-        messages: {
-          required: "Let us know what's on your mind. Don't be shy!",
-          minlength: "Your tweet needs to be more than 1 character.",
-          maxlength: "Your tweet is too long!"
-        }
-      }
-      //submit
-    });
+    // $("#tweet-text").validate({
+    //   rules: {
+    //     tweet: {
+    //       required: true,
+    //       minlength: 1,
+    //       maxlength: 240
+    //     },
+    //     messages: {
+    //       required: "Let us know what's on your mind. Don't be shy!",
+    //       minlength: "Your tweet needs to be more than 1 character.",
+    //       maxlength: "Your tweet is too long!"
+    //     }
+    //   }
+    //   //submit to show error message
+    // });
     //"" or empty
     //too long
     //toggle & slide down
 
     //ajax post request
     $.ajax({
-      type: "POST",
-      url: "/tweets",
-      data: loadTweets(),
-      dataType: "json",
-      encode: true
-    }).done((tweet) => {
-      console.log(tweet);
-    });
+      method: "POST",
+      url: "http://localhost:8080/tweets",
+      data: $(this).serialize(),
+      success: (() => {
+        loadTweets();
+      })
+      // $.post("/tweets", tweet).done(() => {
+      //   loadTweets();
+      // });
 
-    event.preventDefault();
-    // $.post("/tweets", tweet).success(() => {
-    //   loadTweets();
-    // });
+      //event.preventDefault();
+      // $.post("/tweets", tweet).success(() => {
+      //   loadTweets();
+      // });
+    });
   });
- 
+  loadTweets();
 });
+
 
 
 // // Test / driver code (temporary). Eventually will get this from the server.
