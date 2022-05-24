@@ -11,7 +11,9 @@ $(document).ready(() => {
   //fetch tweets data
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
-    const content = escape(tweetData.content);
+    const content = escape(tweetData.content.text);
+    console.log(content);
+    // const content = escape(tweetData.content);
     const time = tweetData.created_at;
 
     const $tweetElement = `
@@ -21,9 +23,9 @@ $(document).ready(() => {
           <img src="${user.avatars}"> 
           <span>${user.name}</span>
         </div>
-        <p class="user-id">${user.handle}</p>
+        <div class="user-id">${user.handle}</div>
       </header>
-      <p class="tweet-text-log">${content}</p>
+      <div class="tweet-text-log">${content}</div>
       <footer>
         <span class="time">${timeago.format(time)}</span>
         <div class="interaction-icons-container">

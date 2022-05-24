@@ -103,9 +103,8 @@ button {
   background-color:#4056A1;
   font-size: 20px;
 }
-button :hover {
-  color: white;
-}
+
+
 
 input {
   background: transparent;
