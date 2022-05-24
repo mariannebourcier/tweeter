@@ -2,7 +2,7 @@
 //document ready
 $(document).ready(() => {
   //escape function to make tweet input safe
-  const escape = function (str) {
+  const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -11,11 +11,11 @@ $(document).ready(() => {
   //fetch tweets data
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
-    const content = tweetData.content;
+    const content = escape(tweetData.content);
     const time = tweetData.created_at;
 
     const $tweetElement = `
-    <article id='tweet-container'>
+    <article id='tweets-container'>
       <header>
         <div>
           <img src="${user.avatars}"> 
@@ -23,7 +23,7 @@ $(document).ready(() => {
         </div>
         <p class="user-id">${user.handle}</p>
       </header>
-      <p class="tweet-text-log">${escape(content)}</p>
+      <p class="tweet-text-log">${content}</p>
       <footer>
         <span class="time">${timeago.format(time)}</span>
         <div class="interaction-icons-container">

@@ -58,7 +58,7 @@ nav .nav-right {
 
 .nav-right-icon {
   color: #B61919;
-  padding-top: 40px;
+  padding-top: 45px;
   position: absolute;
   margin-top: 5px;
   margin-left: 90%;
@@ -102,6 +102,9 @@ button {
   color: white;
   background-color:#4056A1;
   font-size: 20px;
+}
+button :hover {
+  color: white;
 }
 
 input {
