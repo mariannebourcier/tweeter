@@ -104,7 +104,23 @@ button {
   font-size: 20px;
 }
 
+/* #form.errorClass {
+  border: 2px solid red;
+  border-radius: 4px;
+  line-height: 1;
+  background: transparent;
+}
 
+#form.validClass {
+  border: 2px solid blue;
+  color: yellow;
+}
+
+input.error {
+  border: 1px solid red;
+  font-weight: 300;
+  color: red;
+} */
 
 input {
   background: transparent;

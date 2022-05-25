@@ -62,27 +62,7 @@ $(document).ready(() => {
     //event.preventDefault();
     //serialize
     event.preventDefault();
-    // const text = $("#tweet-text").val();
-    // const body = {text};
-    //form validation
-    // $("#tweet-text").validate({
-    //   rules: {
-    //     tweet: {
-    //       required: true,
-    //       minlength: 1,
-    //       maxlength: 240
-    //     },
-    //     messages: {
-    //       required: "Let us know what's on your mind. Don't be shy!",
-    //       minlength: "Your tweet needs to be more than 1 character.",
-    //       maxlength: "Your tweet is too long!"
-    //     }
-    //   }
-    //   //submit to show error message
-    // });
-    //"" or empty
-    //too long
-    //toggle & slide down
+
 
     //ajax post request
     $.ajax({
@@ -92,14 +72,7 @@ $(document).ready(() => {
       success: (() => {
         loadTweets();
       })
-      // $.post("/tweets", tweet).done(() => {
-      //   loadTweets();
-      // });
-
-      //event.preventDefault();
-      // $.post("/tweets", tweet).success(() => {
-      //   loadTweets();
-      // });
+ 
     });
   });
   loadTweets();
@@ -107,21 +80,3 @@ $(document).ready(() => {
 
 
 
-// // Test / driver code (temporary). Eventually will get this from the server.
-// const tweetData = {
-//   "user": {
-//     "name": "Newton",
-//     "avatars": "https://i.imgur.com/73hZDYK.png",
-//     "handle": "@SirIsaac"
-//   },
-//   "content": {
-//     "text": "If I have seen further it is by standing on the shoulders of giants"
-//   },
-//   "created_at": 1461116232227
-// }
-
-// const $tweet = createTweetElement(tweetData);
-
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
