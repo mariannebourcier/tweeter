@@ -56,6 +56,14 @@ $(document).ready(() => {
 
   //new tweet
   //event listener
+  //form validation
+  const formValidation = () => {
+    let error = "#error-messages";
+    $(error).hide();
+    if () {
+      
+    }
+  }
 
   $("#form").submit(function(event) {
     //prevent default
