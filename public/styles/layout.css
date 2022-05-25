@@ -122,6 +122,19 @@ input.error {
   color: red;
 } */
 
+
+#error-messages {
+  border: solid 3px red;
+  color: red;
+  background-color: transparent;
+  width: 100%;
+  justify-content: center;
+  font-weight: bold;
+  margin: 10%;
+  padding: 5%;
+}
+
+
 input {
   background: transparent;
   outline: none;

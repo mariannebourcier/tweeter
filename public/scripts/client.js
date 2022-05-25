@@ -12,8 +12,6 @@ $(document).ready(() => {
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = escape(tweetData.content.text);
-    console.log(content);
-    // const content = escape(tweetData.content);
     const time = tweetData.created_at;
 
     const $tweetElement = `
@@ -54,22 +52,43 @@ $(document).ready(() => {
     });
   };
 
+  //nav toggle
+  $("#nav-toggle").click(function() {
+    $("#new-tweet").toggle("slow", function() {
+    });
+  });
+
   //new tweet
   //event listener
   //form validation
-  const formValidation = () => {
+  const tweetValidation = (length) => {
+    let tweetContent = $("#tweet-text").val();
+    length = tweetContent.length;
+    console.log(length);
     let error = "#error-messages";
+
     $(error).hide();
-    if () {
-      
+
+
+    if (length > 140) {
+      $(error).slideDown(500).text("Your tweet is too long!");
+      return false;
     }
-  }
+    if (length < 1) {
+      $(error).slideDown(500).text("Tell us more..");
+      return false;
+    }
+    return true;
+  };
 
   $("#form").submit(function(event) {
-    //prevent default
-    //event.preventDefault();
-    //serialize
     event.preventDefault();
+    let tweetContent = $("#tweet-text").val();
+    let length = tweetContent.length;
+
+    //check if tweet valid
+    const validTweet = tweetValidation(length);
+    if (!validTweet) return;
 
 
     //ajax post request

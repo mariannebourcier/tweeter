@@ -35,7 +35,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class="nav-left">tweeter</div>
-      <div class="nav-right"><b>Write</b> a new tweet</div> 
+      <div class="nav-right" id="nav-toggle"><b>Write</b> a new tweet</div> 
       <div class="nav-right-icon"><i class="fa-solid fa-angles-down fa-bounce"></i></div>
     </nav>
     <header id="header">
@@ -49,11 +49,11 @@
   </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" id="new-tweet">
         <form id="form" class="form">
           <div id="error-messages"></div>
           <label for="tweet-text"><b>What are you humming about?</b></label>
-          <input type="text" name="text" id="tweet-text" required></input>
+          <input type="text" name="text" id="tweet-text"></input>
           <div>
             <hr>
             <button type="submit" class="tweet-send">Tweet</button>
