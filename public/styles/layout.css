@@ -25,12 +25,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-
-
  nav {
    height: 120px;
    background-color: #4056A1;
@@ -69,7 +63,7 @@ main {
   width: 100%;
   padding: 0 10% 0 10%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-color:#ded8cd;
   align-items: center;
 }
@@ -104,23 +98,6 @@ button {
   font-size: 20px;
 }
 
-/* #form.errorClass {
-  border: 2px solid red;
-  border-radius: 4px;
-  line-height: 1;
-  background: transparent;
-}
-
-#form.validClass {
-  border: 2px solid blue;
-  color: yellow;
-}
-
-input.error {
-  border: 1px solid red;
-  font-weight: 300;
-  color: red;
-} */
 
 
 #error-messages {
