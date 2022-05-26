@@ -1,14 +1,16 @@
 /* eslint-disable no-undef */
-//document ready
+
+
+//Document ready
 $(document).ready(() => {
-  //escape function to make tweet input safe
+  //Escape function to make tweet input safe
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  //create tweet
-  //fetch tweets data
+
+  //Create a new tweet
   const createTweetElement = (tweetData) => {
     const user = tweetData.user;
     const content = escape(tweetData.content.text);
@@ -36,7 +38,8 @@ $(document).ready(() => {
     return $tweetElement;
   };
 
-  //render tweets in string
+
+  //Render tweets on webpage
   const renderTweets = (tweets) => {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -44,7 +47,8 @@ $(document).ready(() => {
     }
   };
 
-  //get tweets
+
+  //View all tweets
   const loadTweets = () => {
     $.getJSON("/tweets/").done((tweets) => {
       $("#tweets-container").empty();
@@ -52,15 +56,15 @@ $(document).ready(() => {
     });
   };
 
-  //nav toggle
+
+  //Hide/show the new tweet section
   $("#nav-toggle").click(function() {
     $("#new-tweet").toggle("slow", function() {
     });
   });
 
-  //new tweet
-  //event listener
-  //form validation
+
+  //Validate a new tweet before posting
   const tweetValidation = (length) => {
     let tweetContent = $("#tweet-text").val();
     length = tweetContent.length;
@@ -84,17 +88,18 @@ $(document).ready(() => {
     return true;
   };
 
+  //Submit tweet and render on webpage
   $("#form").submit(function(event) {
     event.preventDefault();
     let tweetContent = $("#tweet-text").val();
     let length = tweetContent.length;
 
-    //check if tweet valid
+    //Validate tweet before submitting
     const validTweet = tweetValidation(length);
     if (!validTweet) return;
 
 
-    //ajax post request
+    //Post request
     $.ajax({
       method: "POST",
       url: "http://localhost:8080/tweets",

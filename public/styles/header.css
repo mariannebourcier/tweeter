@@ -1,8 +1,8 @@
 #header {
-  height: 400px;
-  width: 25%;
-  padding: 20px;
-  margin: 50px;
+  /* height: 400px;
+  width: 25%; */
+  /* padding: 20px;
+  margin: 50px; */
   background-color: #fe7e6d;
   background-image: url("https://www.transparenttextures.com/patterns/satin-weave.png");
   box-sizing: border-box;
@@ -29,3 +29,6 @@ header .header-image {
     width: 100%;
   }
 }
+
+
+
