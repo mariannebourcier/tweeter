@@ -71,13 +71,16 @@ $(document).ready(() => {
 
 
     if (length > 140) {
+      $(error).show();
       $(error).slideDown(500).text("Your tweet is too long!");
       return false;
     }
     if (length < 1) {
+      $(error).show();
       $(error).slideDown(500).text("Tell us more..");
       return false;
     }
+    $(error).hide();
     return true;
   };
 

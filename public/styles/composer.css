@@ -9,7 +9,7 @@ main {
 }
 
 .main-h1 {
-  font-size: clamp(3rem, 1rem);
+  font-size: clamp(1rem, 3rem);
   font-weight: bolder;
 }
 
@@ -35,7 +35,7 @@ button {
   font-family: 'Bungee', sans-serif;
   color: white;
   background-color:#4056A1;
-  font-size: clamp(3rem, 1rem);
+  font-size: clamp(1rem, 3rem);
 }
 
 /* responsive css */
