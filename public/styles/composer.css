@@ -1,14 +1,15 @@
 main {
-  width: 100%;
-  padding: 0 10% 0 10%;
+  width: 60%;
+  padding: 10%;
   display: inline-block;
   flex-direction: row;
   background-color:#ded8cd;
   align-items: center;
+  justify-content: center;
 }
 
 .main-h1 {
-  font-size: 25px;
+  font-size: clamp(3rem, 1rem);
   font-weight: bolder;
 }
 
@@ -34,6 +35,7 @@ button {
   font-family: 'Bungee', sans-serif;
   color: white;
   background-color:#4056A1;
-  font-size: 20px;
+  font-size: clamp(3rem, 1rem);
 }
 
+/* responsive css */
