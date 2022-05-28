@@ -1,6 +1,6 @@
-/* eslint-disable no-undef */
-$(document).ready(function() {
-  $("#tweet-text").keyup(function() {
+//Implement a character count when typing a tweet
+$(document).ready(function () {
+  $("#tweet-text").keyup(function () {
     const typedText = $(this).val();
     const numChars = 140 - typedText.length;
     $("#charCounter").text(numChars);

@@ -4,7 +4,7 @@
 //Document ready
 $(document).ready(() => {
   //Escape function to make tweet input safe
-  const escape = function(str) {
+  const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -59,8 +59,8 @@ $(document).ready(() => {
 
 
   //Hide/show the new tweet section
-  $("#nav-toggle").click(function() {
-    $("#new-tweet").toggle("slow", function() {
+  $("#nav-toggle").click(function () {
+    $("#new-tweet").toggle("slow", function () {
     });
   });
 
@@ -90,7 +90,7 @@ $(document).ready(() => {
   };
 
   //Submit tweet and render on webpage
-  $("#form").submit(function(event) {
+  $("#form").submit(function (event) {
     event.preventDefault();
     let tweetContent = $("#tweet-text").val();
     let length = tweetContent.length;
@@ -108,7 +108,7 @@ $(document).ready(() => {
       success: (() => {
         loadTweets();
       })
- 
+
     });
   });
   loadTweets();

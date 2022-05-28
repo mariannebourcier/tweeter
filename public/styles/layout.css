@@ -3,15 +3,18 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- @import url('header.css');
- @import url('tweets.css');
- @import url('composer.css');
- @import url('responsive.css');
+@import url('header.css');
+@import url('tweets.css');
+@import url('composer.css');
+@import url('responsive.css');
 
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -24,23 +27,20 @@ body {
   background-color: #ded8cd;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
- nav {
-   display: inline-block;
-   width: 100vw;
-   background-color: #4056a1;
-   position: fixed;
-   top: 0;
-   height: 120px;
-   padding: 0 1.5em 0 1.5em;
- }
+nav {
+  display: inline-block;
+  width: 100vw;
+  background-color: #4056a1;
+  position: fixed;
+  top: 0;
+  height: 120px;
+  padding: 0 1.5em 0 1.5em;
+}
 
 
- nav .nav-left {
+nav .nav-left {
   padding-top: 40px;
   font-family: 'Bungee', sans-serif;
   color: #FFFFFF;
@@ -77,5 +77,3 @@ nav .nav-right {
   margin: 10%;
   padding: 5%;
 }
-
-

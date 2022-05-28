@@ -1,9 +1,9 @@
 main {
-  width: 100%; 
+  width: 100%;
   display: flex;
   padding: 30px;
   flex-direction: column;
-  background-color:#ded8cd;
+  background-color: #ded8cd;
   align-items: center;
   justify-content: end;
 }
@@ -11,8 +11,8 @@ main {
 
 
 hr {
-  width: 100%; 
-  height: 4px; 
+  width: 100%;
+  height: 4px;
   border-top: 4px solid #545149;
   border-color: #545149;
   box-sizing: border-box;
@@ -22,14 +22,14 @@ hr {
 
 .counter {
   float: right;
-  font-family: 'Bungee', sans-serif ;
+  font-family: 'Bungee', sans-serif;
 }
 
 button {
   float: left;
   font-family: 'Bungee', sans-serif;
   color: white;
-  background-color:#4056A1;
+  background-color: #4056A1;
   font-size: clamp(1rem, 3rem);
 }
 
