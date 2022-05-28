@@ -104,8 +104,8 @@ $(document).ready(() => {
       data: $(this).serialize(),
       success: (() => {
         loadTweets();
+        $("form")[0].reset();
       })
-
     });
   });
   loadTweets();
