@@ -17,15 +17,15 @@ $(document).ready(() => {
     const time = tweetData.created_at;
 
     const $tweetElement = `
-    <article id='tweets-container'>
-      <header>
-        <div>
+    <section id='tweets-container'>
+    <div id="single-tweet">
+      <header id="user">
           <img src="${user.avatars}"> 
           <span>${user.name}</span>
-        </div>
         <div class="user-id">${user.handle}</div>
       </header>
       <div class="tweet-text-log">${content}</div>
+      <hr>
       <footer>
         <span class="time">${timeago.format(time)}</span>
         <div class="interaction-icons-container">
@@ -34,7 +34,8 @@ $(document).ready(() => {
           <a href="#"><i class="heart-icon fa-solid fa-heart"></i></i></a>
         </div>
       </footer>
-    </article>`;
+      </div>
+    </section>`;
     return $tweetElement;
   };
 
