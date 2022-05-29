@@ -6,7 +6,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 !["Desktop"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/desktop-view.png?raw=true) This screenshot shows the layout of Tweeter on a desktop screen. 
+
 !["Mobile"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/mobile-view.png?raw=true) This screenshot shows the layout of Tweeter on a mobile screen. 
+
 !["Tablet"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/tablet-view.png?raw=true) This screenshot shows the layout of Tweeter on a tablet screen.
 
 ## Getting Started
@@ -16,6 +18,7 @@ This repository is the starter code for the project: Students will fork and clon
 3. Install dependencies using the `npm install` command.
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
+5. Think of your favorite programming joke and tweet it on the page!
 
 ## Dependencies
 
