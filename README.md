@@ -7,7 +7,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Final Product
 !["Desktop view"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/desktop-view.png?raw=true) This screenshot shows the layout of Tweeter on a desktop screen. 
 !["Mobile view"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/mobile-view.png?raw=true) This screenshot shows the layout of Tweeter on a mobile screen. 
-!["Tablet view"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/tablet-view.png?raw=true) This screenshot shows the layout of Tweeter on a tablet screen. 
+!["Tablet view"] (https://github.com/mariannebourcier/tweeter/blob/master/docs/tablet-view.png?raw=true) This screenshot shows the layout of Tweeter on a tablet screen.
 
 ## Getting Started
 
