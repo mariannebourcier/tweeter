@@ -39,26 +39,30 @@
 
 /* desktop */
 @media only screen and (min-width: 1024px) {
-
-  #header {
+  body {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-flow: row;
+    align-items: flex-start;
     justify-content: center;
-    width: 40vw;
-    padding-top: 0;
-    margin-top: 15vw;
-    margin-left: 5vw;
+  }
+  nav {
+    width: 100%;
   }
 
-  #tweets-container {
-    padding: 0;
-    margin: 0;
-    width: 30vw;
+  #header {
+    height: inherit;
+    width: 40vw;
+    margin: 15vw 2.5vw 2.5vw 2.5vw;
+    float: left;
+    justify-content: center;
   }
 
   main {
-    width: 20vw;
-    padding: 0;
+    width: 55vw;
+    padding-top: 15vw;
+    height: inherit;
+  }
+  #tweets-container {
+    width: 45vw;
   }
 }
