@@ -66,7 +66,6 @@ $(document).ready(() => {
   const tweetValidation = (length) => {
     let tweetContent = $("#tweet-text").val();
     length = tweetContent.length;
-    console.log(length);
     let error = "#error-messages";
 
     $(error).hide();
