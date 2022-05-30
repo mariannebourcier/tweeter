@@ -104,6 +104,7 @@ $(document).ready(() => {
       success: (() => {
         loadTweets();
         $("form")[0].reset();
+        $("tweet-text").reset();
       })
     });
   });

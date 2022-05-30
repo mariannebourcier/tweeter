@@ -1,24 +1,24 @@
 [
   {
     "user": {
-      "name": "Newton",
+      "name": "Pepito",
       "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
+      "handle": "@Pepito_Loves_Margaritas"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "I've been using VIM for about 2 years now, mostly because I can't figure out how to exit it."
     },
-    "created_at": 1653676772013
+    "created_at": 1653752045962
   },
   {
     "user": {
-      "name": "Descartes",
+      "name": "Froggy McGee",
       "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
+      "handle": "@BrainFrog"
     },
     "content": {
-      "text": "Je pense , donc je suis"
+      "text": "I have a joke on programming, but it only works on my computer."
     },
-    "created_at": 1653763172013
+    "created_at": 1653838445962
   }
 ]
