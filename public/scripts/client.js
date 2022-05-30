@@ -90,6 +90,7 @@ $(document).ready(() => {
     event.preventDefault();
     let tweetContent = $("#tweet-text").val();
     let length = tweetContent.length;
+    //const counter = "#tweet-text";
 
     //Validate tweet before submitting
     const validTweet = tweetValidation(length);
@@ -104,7 +105,7 @@ $(document).ready(() => {
       success: (() => {
         loadTweets();
         $("form")[0].reset();
-        $("tweet-text").reset();
+        $("#charCounter").text('140');
       })
     });
   });
